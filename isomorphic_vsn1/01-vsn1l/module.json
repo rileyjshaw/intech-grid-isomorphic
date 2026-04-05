@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "created": "2026-04-04T09:10:46.415Z",
+  "modified": "2026-04-04T09:10:46.417Z",
+  "toolVersion": "0.1.0",
+  "index": 1,
+  "position": [
+    0,
+    0
+  ],
+  "type": "VSN1L",
+  "typeId": 59,
+  "firmware": {
+    "major": 1,
+    "minor": 5,
+    "patch": 1
+  },
+  "elements": [
+    {
+      "index": 0,
+      "type": "button"
+    },
+    {
+      "index": 1,
+      "type": "button"
+    },
+    {
+      "index": 2,
+      "type": "button"
+    },
+    {
+      "index": 3,
+      "type": "button"
+    },
+    {
+      "index": 4,
+      "type": "button"
+    },
+    {
+      "index": 5,
+      "type": "button"
+    },
+    {
+      "index": 6,
+      "type": "button"
+    },
+    {
+      "index": 7,
+      "type": "button"
+    },
+    {
+      "index": 8,
+      "type": "endless"
+    },
+    {
+      "index": 9,
+      "type": "button"
+    },
+    {
+      "index": 10,
+      "type": "button"
+    },
+    {
+      "index": 11,
+      "type": "button"
+    },
+    {
+      "index": 12,
+      "type": "button"
+    },
+    {
+      "index": 13,
+      "type": "lcd"
+    },
+    {
+      "index": 255,
+      "type": "system"
+    }
+  ],
+  "pages": [
+    0
+  ]
+}
