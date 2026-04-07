@@ -121,6 +121,18 @@ Shared by BU16 and VSN1.
 
 Starts `true` on init. The leader clears it to `false` when handling `iso_ss == 0` (first broadcast after the 500ms delay). While `true`, `iso_nj` does nothing so non-leaders’ immediate pings do not trigger `iso_go` before the leader is ready.
 
+### `iso_v`
+
+Shared by BU16 and VSN1.
+
+Velocity enable flag. When `true` (the default), note-on messages send the pressure-sensitive `button_value()` as velocity. When `false`, all note-on messages send `127` (full velocity). Toggled on the VSN1 by pressing the encoder button (element 8).
+
+### `iso_vd`
+
+VSN1 only.
+
+Velocity-display flag. Set to `true` when the encoder button (element 8) toggles `iso_v`, which also starts a 2-second timer on that element. While `true` the LCD draw routine shows "Velocity ON" or "Velocity OFF" instead of the normal encoder page. The element 8 timer callback resets it to `false`.
+
 ### `iso_pg`
 
 VSN1 only.

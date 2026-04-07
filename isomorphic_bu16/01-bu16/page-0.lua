@@ -23,8 +23,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -80,8 +81,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -137,8 +139,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -194,8 +197,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -251,8 +255,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -308,8 +313,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -365,8 +371,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -422,8 +429,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -479,8 +487,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -536,8 +545,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -593,8 +603,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -650,8 +661,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -707,8 +719,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -764,8 +777,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -821,8 +835,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -878,8 +893,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -928,6 +944,7 @@ iso_mx = 0
 iso_my = 0
 iso_bt = true
 iso_ld = false
+iso_v = true
 function min(a, b)
   return a < b and a or b
 end

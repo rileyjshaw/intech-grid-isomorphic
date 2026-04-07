@@ -23,8 +23,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -81,8 +82,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -139,8 +141,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -197,8 +200,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -255,8 +259,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -313,8 +318,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -371,8 +377,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -429,8 +436,9 @@ self:button_max(127)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+local vel = iso_v and self:button_value() or 127
 if self:button_state() > 0 then
-  midi_send(0, 0x90, self.note_number, self:button_value())
+  midi_send(0, 0x90, self.note_number, vel)
 else
   midi_send(0, 0x80, self.note_number, 0)
 end
@@ -477,6 +485,23 @@ self:button_max(127)
 self:led_color(-1, { { -1, -1, -1, 1 } })
 self:led_value(-1, -1)
 
+-- ------------------------------------------------------------
+-- action: Code Block (cb)
+--[[@cb]]
+if self:button_value() > 0 then
+  iso_v = not iso_v
+  iso_vd = true
+  timer_start(self:element_index(), 2000)
+  immediate_send(nil, nil, "iso_v=" .. tostring(iso_v))
+end
+
+-- ============================================================
+
+-- grid:event element=8 event=timer
+-- action: Code Block (cb)
+--[[@cb]]
+iso_vd = false
+
 -- ============================================================
 
 -- grid:event element=8 event=endless
@@ -497,12 +522,16 @@ self:led_value(-1, -1)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
-if iso_pg == 4 then return end
+if iso_pg == 4 then
+  return
+end
 local val = self:endless_value()
 if iso_pg < 3 then
   val = iso_e2o(val)
 end
-if val == iso_prev then return end
+if val == iso_prev then
+  return
+end
 iso_prev = val
 if iso_pg == 1 then
   ISO_X = val
@@ -592,28 +621,34 @@ local function midi_to_label(n)
     return note
   end
 end
-local val = element[8]:endless_value()
-local label = ""
-if iso_pg < 3 then
-  val = (val * 24 + 63) // 127 - 12
-end
-if iso_pg == 1 then
-  val = ISO_X
-  label = "X"
-elseif iso_pg == 2 then
-  val = ISO_Y
-  label = "Y"
-elseif iso_pg == 3 then
-  val = ISO_A
-  label = midi_to_label(val)
-end
 self:draw_rectangle_filled(0, 0, self:screen_width(), self:screen_height(), { 0, 0, 0 })
-if iso_pg == 4 then
-  lcd_set_backlight(0)
-else
+if iso_vd then
   lcd_set_backlight(200)
-  self:draw_text_fast(label, 0, 12, 100, { 255, 22, 22 })
-  self:draw_text_fast(val, 0, 120, 108, { 255, 22, 22 })
+  local msg = iso_v and "Velocity ON" or "Velocity OFF"
+  self:draw_text_fast(msg, 20 + (iso_v and 10 or 0), 108, 20, { 255, 22, 22 })
+else
+  local val = element[8]:endless_value()
+  local label = ""
+  if iso_pg < 3 then
+    val = (val * 24 + 63) // 127 - 12
+  end
+  if iso_pg == 1 then
+    val = ISO_X
+    label = "X"
+  elseif iso_pg == 2 then
+    val = ISO_Y
+    label = "Y"
+  elseif iso_pg == 3 then
+    val = ISO_A
+    label = midi_to_label(val)
+  end
+  if iso_pg == 4 then
+    lcd_set_backlight(0)
+  else
+    lcd_set_backlight(200)
+    self:draw_text_fast(label, 0, 12, 100, { 255, 22, 22 })
+    self:draw_text_fast(val, 0, 120, 108, { 255, 22, 22 })
+  end
 end
 self:draw_swap()
 
@@ -650,6 +685,8 @@ iso_my = 0
 iso_bt = true
 iso_ld = false
 iso_prev = nil
+iso_v = true
+iso_vd = false
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -697,9 +734,13 @@ function iso_ir()
   for i = 0, 7 do
     local x = (i + 8) % 4
     local y = (i + 8) // 4
-    if r == 1 then x, y = 3 - y, x
-    elseif r == 2 then x, y = 3 - x, 3 - y
-    elseif r == 3 then x, y = y, 3 - x end
+    if r == 1 then
+      x, y = 3 - y, x
+    elseif r == 2 then
+      x, y = 3 - x, 3 - y
+    elseif r == 3 then
+      x, y = y, 3 - x
+    end
     iso_ri[i] = y * 4 + x
   end
 end
@@ -711,7 +752,7 @@ if iso_ss == 0 then
     iso_ss = iso_ss + 1
     timer_start(self:element_index(), 400)
   else
-    immediate_send(nil, nil, "if iso_nj then iso_nj() end")
+    immediate_send(nil, nil, "if iso_nj then iso_nj()end")
   end
 elseif iso_ss == 1 then
   iso_bt = false
