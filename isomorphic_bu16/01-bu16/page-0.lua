@@ -937,6 +937,9 @@ function iso_go(x, y, a)
   if a ~= nil then
     ISO_A = a
   end
+  for i = 0, 15 do
+    timer_stop(i)
+  end
   iso_gx = module_position_x()
   iso_gy = module_position_y()
   iso_mx = 0

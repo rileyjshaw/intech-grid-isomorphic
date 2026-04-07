@@ -486,7 +486,7 @@ self:endless_mode(0)
 self:endless_velocity(50)
 self:endless_min(0)
 self:endless_max(127)
-self:endless_sensitivity(50)
+self:endless_sensitivity(100)
 
 -- ------------------------------------------------------------
 -- action: Simple Color (sglc)
@@ -497,10 +497,13 @@ self:led_value(-1, -1)
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
+if iso_pg == 4 then return end
 local val = self:endless_value()
 if iso_pg < 3 then
   val = iso_e2o(val)
 end
+if val == iso_prev then return end
+iso_prev = val
 if iso_pg == 1 then
   ISO_X = val
 elseif iso_pg == 2 then
@@ -524,6 +527,7 @@ self:button_max(127)
 -- action: Code Block (cb)
 --[[@cb]]
 iso_pg = self:element_index() - 8
+iso_prev = ISO_X
 element[8]:endless_value(iso_o2e(ISO_X))
 
 -- ============================================================
@@ -539,6 +543,7 @@ self:button_max(127)
 -- action: Code Block (cb)
 --[[@cb]]
 iso_pg = self:element_index() - 8
+iso_prev = ISO_Y
 element[8]:endless_value(iso_o2e(ISO_Y))
 
 -- ============================================================
@@ -554,6 +559,7 @@ self:button_max(127)
 -- action: Code Block (cb)
 --[[@cb]]
 iso_pg = self:element_index() - 8
+iso_prev = ISO_A
 element[8]:endless_value(ISO_A)
 
 -- ============================================================
@@ -569,6 +575,7 @@ self:button_max(127)
 -- action: Code Block (cb)
 --[[@cb]]
 iso_pg = self:element_index() - 8
+iso_prev = nil
 
 -- ============================================================
 
@@ -642,6 +649,7 @@ iso_mx = 0
 iso_my = 0
 iso_bt = true
 iso_ld = false
+iso_prev = nil
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -651,6 +659,9 @@ function iso_go(x, y, a)
   ISO_Y = y
   if a ~= nil then
     ISO_A = a
+  end
+  for i = 0, 7 do
+    timer_stop(i)
   end
   iso_gx = module_position_x()
   iso_gy = module_position_y()
