@@ -9,7 +9,7 @@ self:led_value(1, -1)
 -- ------------------------------------------------------------
 -- action: Start Animation (glat)
 --[[@glat]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 2, 3)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 2, 3)
 
 -- ============================================================
 
@@ -39,7 +39,7 @@ led_value(self:element_index() + 10, 1, math.max(64, self:button_value()))
 -- grid:event element=0 event=timer
 -- action: Stop Animation (glap)
 --[[@glap]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 0, 0)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 0, 0)
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -67,7 +67,7 @@ self:led_value(1, -1)
 -- ------------------------------------------------------------
 -- action: Start Animation (glat)
 --[[@glat]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 2, 3)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 2, 3)
 
 -- ============================================================
 
@@ -97,7 +97,7 @@ led_value(self:element_index() + 10, 1, math.max(64, self:button_value()))
 -- grid:event element=1 event=timer
 -- action: Stop Animation (glap)
 --[[@glap]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 0, 0)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 0, 0)
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -125,7 +125,7 @@ self:led_value(1, -1)
 -- ------------------------------------------------------------
 -- action: Start Animation (glat)
 --[[@glat]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 2, 3)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 2, 3)
 
 -- ============================================================
 
@@ -155,7 +155,7 @@ led_value(self:element_index() + 10, 1, math.max(64, self:button_value()))
 -- grid:event element=2 event=timer
 -- action: Stop Animation (glap)
 --[[@glap]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 0, 0)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 0, 0)
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -183,7 +183,7 @@ self:led_value(1, -1)
 -- ------------------------------------------------------------
 -- action: Start Animation (glat)
 --[[@glat]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 2, 3)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 2, 3)
 
 -- ============================================================
 
@@ -213,7 +213,7 @@ led_value(self:element_index() + 10, 1, math.max(64, self:button_value()))
 -- grid:event element=3 event=timer
 -- action: Stop Animation (glap)
 --[[@glap]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 0, 0)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 0, 0)
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -241,7 +241,7 @@ self:led_value(1, -1)
 -- ------------------------------------------------------------
 -- action: Start Animation (glat)
 --[[@glat]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 2, 3)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 2, 3)
 
 -- ============================================================
 
@@ -271,7 +271,7 @@ led_value(self:element_index() + 10, 1, math.max(64, self:button_value()))
 -- grid:event element=4 event=timer
 -- action: Stop Animation (glap)
 --[[@glap]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 0, 0)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 0, 0)
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -299,7 +299,7 @@ self:led_value(1, -1)
 -- ------------------------------------------------------------
 -- action: Start Animation (glat)
 --[[@glat]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 2, 3)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 2, 3)
 
 -- ============================================================
 
@@ -329,7 +329,7 @@ led_value(self:element_index() + 10, 1, math.max(64, self:button_value()))
 -- grid:event element=5 event=timer
 -- action: Stop Animation (glap)
 --[[@glap]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 0, 0)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 0, 0)
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -357,7 +357,7 @@ self:led_value(1, -1)
 -- ------------------------------------------------------------
 -- action: Start Animation (glat)
 --[[@glat]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 2, 3)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 2, 3)
 
 -- ============================================================
 
@@ -387,7 +387,7 @@ led_value(self:element_index() + 10, 1, math.max(64, self:button_value()))
 -- grid:event element=6 event=timer
 -- action: Stop Animation (glap)
 --[[@glap]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 0, 0)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 0, 0)
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -415,7 +415,7 @@ self:led_value(1, -1)
 -- ------------------------------------------------------------
 -- action: Start Animation (glat)
 --[[@glat]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 2, 3)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 2, 3)
 
 -- ============================================================
 
@@ -445,7 +445,7 @@ led_value(self:element_index() + 10, 1, math.max(64, self:button_value()))
 -- grid:event element=7 event=timer
 -- action: Stop Animation (glap)
 --[[@glap]]
-led_animation_phase_rate_type(iso_ri[self:element_index()], 1, 0, 0, 0)
+led_animation_phase_rate_type(self:element_index(), 1, 0, 0, 0)
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
@@ -508,7 +508,7 @@ elseif iso_pg == 2 then
 elseif iso_pg == 3 then
   ISO_A = val
 end
-immediate_send(nil, nil, "if iso_si then iso_si(" .. ISO_X .. "," .. ISO_Y .. "," .. ISO_A .. ")end")
+immediate_send(nil, nil, "if iso_go then iso_go(" .. ISO_X .. "," .. ISO_Y .. "," .. ISO_A .. ")end")
 iso_go(ISO_X, ISO_Y)
 
 -- ============================================================
@@ -626,50 +626,55 @@ end
 function iso_o2e(x)
   return (x < 0) and ((x + 12) * 64 + 32) // 12 or (64 + ((x - 1) * 64 + 32) // 12)
 end
-iso_pg = 4
+function min(a, b)
+  return a < b and a or b
+end
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
 iso_ri = {}
+iso_pg = 4
+iso_ss = 0
+iso_gx = 0
+iso_gy = 0
+iso_mx = 0
+iso_my = 0
+iso_bt = true
+iso_ld = false
 
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
-iso_ss = 0
-iso_gx = 0
-iso_gy = 0
-iso_min_gx = 0
-iso_min_gy = 0
-function min(a, b)
-  return a < b and a or b
-end
-function iso_go(x, y)
-  if x ~= ISO_X or y ~= ISO_Y then
-    return
+function iso_go(x, y, a)
+  ISO_X = x
+  ISO_Y = y
+  if a ~= nil then
+    ISO_A = a
   end
-  iso_gx = 0
-  iso_gy = 0
-  iso_min_gx = 0
-  iso_min_gy = 0
+  iso_gx = module_position_x()
+  iso_gy = module_position_y()
+  iso_mx = 0
+  iso_my = 0
+  iso_ir()
   for i = 0, 7 do
     element[i]:ini()
   end
-  iso_ss = 1
+  iso_ss = 2
   timer_stop(self:element_index())
   timer_start(self:element_index(), 30)
 end
 function iso_gu(x, y)
-  iso_min_gx = min(x, iso_min_gx)
-  iso_min_gy = min(y, iso_min_gy)
+  iso_mx = min(x, iso_mx)
+  iso_my = min(y, iso_my)
 end
-function iso_si(x, y, a)
-  ISO_X = x
-  ISO_Y = y
-  ISO_A = a
-  iso_go(x, y)
+function iso_nj()
+  if iso_ld and not iso_bt then
+    immediate_send(nil, nil, "if iso_go then iso_go(" .. ISO_X .. "," .. ISO_Y .. "," .. ISO_A .. ")end")
+    iso_go(ISO_X, ISO_Y, ISO_A)
+  end
 end
-timer_start(self:element_index(), 500)
+timer_start(self:element_index(), 100)
 
 -- ============================================================
 
@@ -679,43 +684,41 @@ timer_start(self:element_index(), 500)
 function iso_ir()
   local r = module_rotation()
   for i = 0, 7 do
-    local std_i = i + 8
-    local x = std_i % 4
-    local y = math.floor(std_i / 4)
-    local rx, ry
-    if r == 0 then
-      rx, ry = x, y
-    elseif r == 1 then
-      rx = 3 - y
-      ry = x
-    elseif r == 2 then
-      rx = 3 - x
-      ry = 3 - y
-    else
-      rx = y
-      ry = 3 - x
-    end
-    iso_ri[i] = ry * 4 + rx
+    local x = (i + 8) % 4
+    local y = (i + 8) // 4
+    if r == 1 then x, y = 3 - y, x
+    elseif r == 2 then x, y = 3 - x, 3 - y
+    elseif r == 3 then x, y = y, 3 - x end
+    iso_ri[i] = y * 4 + x
   end
 end
 if iso_ss == 0 then
-  immediate_send(nil, nil, "if iso_go then iso_go(" .. ISO_X .. "," .. ISO_Y .. ")end")
-elseif iso_ss == 1 then
   iso_gx = module_position_x()
   iso_gy = module_position_y()
+  iso_ld = iso_gx == 0 and iso_gy == 0
+  if iso_ld then
+    iso_ss = iso_ss + 1
+    timer_start(self:element_index(), 400)
+  else
+    immediate_send(nil, nil, "if iso_nj then iso_nj() end")
+  end
+elseif iso_ss == 1 then
+  iso_bt = false
+  immediate_send(nil, nil, "if iso_go then iso_go(" .. ISO_X .. "," .. ISO_Y .. "," .. ISO_A .. ")end")
+  iso_go(ISO_X, ISO_Y, ISO_A)
+elseif iso_ss == 2 then
   immediate_send(nil, nil, "if iso_gu then iso_gu(" .. iso_gx .. "," .. iso_gy .. ")end")
   iso_ss = iso_ss + 1
   timer_start(self:element_index(), 30)
-elseif iso_ss == 2 then
-  iso_gx = iso_gx - iso_min_gx
-  iso_gy = iso_gy - iso_min_gy
-  iso_ir()
+elseif iso_ss == 3 then
+  iso_ss = iso_ss + 1
+  iso_gx = iso_gx - iso_mx
+  iso_gy = iso_gy - iso_my
   for i = 0, 7 do
     local ri = iso_ri[i]
     local x = ri % 4 + iso_gx * 4
-    local y = 3 - math.floor(ri / 4) + iso_gy * 4
-    local delay = (1 + x + y * 4) * 30
-    timer_start(i, delay)
+    local y = 3 - ri // 4 + iso_gy * 4
+    local t = (1 + x + y * 4) * 30
+    timer_start(i, t)
   end
-  iso_ss = iso_ss + 1
 end
