@@ -662,19 +662,6 @@ ISO_X, ISO_Y, ISO_A = 2, 5, 42
 -- ------------------------------------------------------------
 -- action: Code Block (cb)
 --[[@cb]]
-function iso_e2o(x)
-  return (x < 64) and ((x * 12) // 64 - 12) or ((x - 64) * 12 // 64 + 1)
-end
-function iso_o2e(x)
-  return (x < 0) and ((x + 12) * 64 + 32) // 12 or (64 + ((x - 1) * 64 + 32) // 12)
-end
-function min(a, b)
-  return a < b and a or b
-end
-
--- ------------------------------------------------------------
--- action: Code Block (cb)
---[[@cb]]
 iso_ri = {}
 iso_pg = 4
 iso_ss = 0
@@ -688,14 +675,20 @@ iso_prev = nil
 iso_v = true
 iso_vd = false
 
--- ------------------------------------------------------------
--- action: Code Block (cb)
---[[@cb]]
-function iso_go(x, y, a)
+function iso_e2o(x)
+  return (x < 64) and ((x * 12) // 64 - 12) or ((x - 64) * 12 // 64 + 1)
+end
+function iso_o2e(x)
+  return (x < 0) and ((x + 12) * 64 + 32) // 12 or (64 + ((x - 1) * 64 + 32) // 12)
+end
+function iso_go(x, y, a, v)
   ISO_X = x
   ISO_Y = y
   if a ~= nil then
     ISO_A = a
+  end
+  if v ~= nil then
+    iso_v = v
   end
   for i = 0, 7 do
     timer_stop(i)
@@ -712,16 +705,17 @@ function iso_go(x, y, a)
   timer_stop(self:element_index())
   timer_start(self:element_index(), 30)
 end
+
 function iso_gu(x, y)
-  iso_mx = min(x, iso_mx)
-  iso_my = min(y, iso_my)
+  iso_mx, iso_my = math.min(x, iso_mx), math.min(y, iso_my)
 end
 function iso_nj()
   if iso_ld and not iso_bt then
-    immediate_send(nil, nil, "if iso_go then iso_go(" .. ISO_X .. "," .. ISO_Y .. "," .. ISO_A .. ")end")
+    immediate_send(nil, nil, "if iso_go then iso_go(" .. ISO_X .. "," .. ISO_Y .. "," .. ISO_A .. "," .. tostring(iso_v) .. ")end")
     iso_go(ISO_X, ISO_Y, ISO_A)
   end
 end
+
 timer_start(self:element_index(), 100)
 
 -- ============================================================
@@ -732,8 +726,7 @@ timer_start(self:element_index(), 100)
 function iso_ir()
   local r = module_rotation()
   for i = 0, 7 do
-    local x = (i + 8) % 4
-    local y = (i + 8) // 4
+    local x, y = (i + 8) % 4, (i + 8) // 4
     if r == 1 then
       x, y = 3 - y, x
     elseif r == 2 then
@@ -756,7 +749,7 @@ if iso_ss == 0 then
   end
 elseif iso_ss == 1 then
   iso_bt = false
-  immediate_send(nil, nil, "if iso_go then iso_go(" .. ISO_X .. "," .. ISO_Y .. "," .. ISO_A .. ")end")
+  immediate_send(nil, nil, "if iso_go then iso_go(" .. ISO_X .. "," .. ISO_Y .. "," .. ISO_A .. "," .. tostring(iso_v) .. ")end")
   iso_go(ISO_X, ISO_Y, ISO_A)
 elseif iso_ss == 2 then
   immediate_send(nil, nil, "if iso_gu then iso_gu(" .. iso_gx .. "," .. iso_gy .. ")end")
@@ -767,9 +760,8 @@ elseif iso_ss == 3 then
   iso_gx = iso_gx - iso_mx
   iso_gy = iso_gy - iso_my
   for i = 0, 7 do
-    local ri = iso_ri[i]
-    local x = ri % 4 + iso_gx * 4
-    local y = 3 - ri // 4 + iso_gy * 4
+    local r = iso_ri[i]
+    local x, y = r % 4 + iso_gx * 4, 3 - r // 4 + iso_gy * 4
     local t = (1 + x + y * 4) * 30
     timer_start(i, t)
   end
