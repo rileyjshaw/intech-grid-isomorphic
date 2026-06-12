@@ -1,6 +1,6 @@
-# Self-Organizing Isomorphic Grid
+# Gridstrument
 
-This turns Intech Grid into a playable modular MIDI instrument.
+_**A self-organizing isomorphic instrument using Intech Grid.**_
 
 Install the BU16 config on one or more BU16s, optionally add a VSN1, and connected modules will behave like one seamless note grid. The modules handle the layout themselves; once you’ve installed the configs, you can put your computer away.
 
@@ -19,11 +19,21 @@ An isomorphic layout keeps the same chord and scale shapes everywhere on the gri
 
 ## Quick Start
 
-1. Install the BU16 config on every BU16 you want to use.
-2. Optional: install the VSN1 config on a VSN1.
+1. Install the [BU16 Grid Editor config](grid-editor://?config-link=R8adbrWIyNGzXtcQM8s4) on every BU16 you want to use.
+2. Optional: install the [VSN1 Grid Editor config](grid-editor://?config-link=PppZ21KxBROKk4It37TS) on a VSN1.
 3. Connect the modules together.
 4. Route Grid MIDI to your synth, sampler, or DAW.
 5. Play.
+
+## Videos
+
+- [Preview](https://www.youtube.com/watch?v=DKjYyKGubu8)
+- [Tutorial](https://www.youtube.com/watch?v=KWv29smnyLQ)
+
+## Grid Editor
+
+- [BU16 config](grid-editor://?config-link=R8adbrWIyNGzXtcQM8s4)
+- [VSN1 config](grid-editor://?config-link=PppZ21KxBROKk4It37TS)
 
 ## VSN1
 
